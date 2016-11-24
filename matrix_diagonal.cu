@@ -1,0 +1,1 @@
+/* This kernel takes the diagonals elements of the matrix  A in the vector B */
