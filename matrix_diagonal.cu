@@ -35,9 +35,9 @@ int main(int argc, char **argv){
     /* Reservation of memory */
 
     A = (float*)calloc(N, sizeof(float));
-    	checkMalloc(B,"B");
+    	checkMalloc(A,"A");
 	B = (float*)calloc(N, sizeof(float));
-		checkMalloc(A,"A");
+		checkMalloc(B,"B");
 
 	/* Initialitation Matix A*/
 
@@ -52,16 +52,58 @@ int main(int argc, char **argv){
 
     /* Gaussian Elimination*/
     // The B has to be identity matrix
-
-    float key;
+    memset(B,0.0,N*sizeof(float));
+    for(i = 0; i < N; i++){
+    	Ind(B,i,i) = 1.0;	
+    }
+    printf("B =\n");
     for(i = 0; i < N; i++){
     	for(j = 0; j < N ; j++){
-    		if(i==j){
-    			key = Ind(A,i,j);
-    			Ind(B,i,j) = Ind(A,i,j)/key;
-    		}
-    			
+    		printf(" %f ",Ind(B,i,j));
+    	}
+    printf("\n");	
+    }
 
+    int y;
+    float key;
+    for(i = 0; i < N; i++){ // for to rows
+    	for(j = 0; j <N  ; j++){
+    		y=0;
+    		if(i==j){
+
+    		}else{
+    		while(y<N){
+    	 		if(i+1<N ){
+    	 			Ind(A,i,j+y) = Ind(A,i,j+y) - Ind(A,i+1,j+y)*(Ind(A,i,j)/Ind(A,i+1,j));
+    				Ind(B,i,j+y) = Ind(B,i,j+y) - Ind(B,i+1,j+y)*(Ind(A,i,j)/Ind(A,i+1,j));
+    			}else{
+    				Ind(A,i,j+y) = Ind(A,i,j+y) - Ind(A,i-N-1+y,j+y)*(Ind(A,i,j)/Ind(A,i-N-1,j));
+    				Ind(B,i,j+y) = Ind(B,i,j+y) - Ind(B,i-N-1+y,j+y)*(Ind(A,i,j)/Ind(A,i-N-1,j));
+    			}	
+  				y++;
+    		}
+    		}	
+    	 		//Ind(A,i,j) = 1;
+    			//Ind(B,i,j) = Ind(B,i,j)/Ind(A,i,j);
+    		//}
+    	}
+    }				
+
+	printf("A =\n");
+    for(i = 0; i < N; i++){
+    	for(j = 0; j < N ; j++){
+    		printf(" %f ",Ind(A,i,j));
+    	}
+    printf("\n");	
+    }
+
+    printf("B =\n");
+    for(i = 0; i < N; i++){
+    	for(j = 0; j < N ; j++){
+    		printf(" %f ",Ind(B,i,j));
+    	}
+    printf("\n");	
+    }
     /* Descompotition LU*/
 
 
