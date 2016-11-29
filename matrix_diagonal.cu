@@ -53,10 +53,12 @@ int main(int argc, char **argv){
 
     /* Reservation of memory */
 
+
     h_A = (float*)calloc(N, sizeof(float));
     	checkMalloc(h_A,"h_A");
 	h_B = (float*)calloc(N, sizeof(float));
 		checkMalloc(h_B,"h_B");
+
 
 	/* Initialitation Matix A*/
 
@@ -87,15 +89,15 @@ int main(int argc, char **argv){
 	full_time = timeval_diff(&t_fin, &t_ini);
 	printf("Time CPU = %f [s]\n",full_time);
 
- 	printf("  B =\n");
+
+    printf("B =\n");
     for(i = 0; i < N; i++){
     	for(j = 0; j < N ; j++){
-    		printf(" %f ",Ind(h_B,i,j));
+    		printf(" %f ",Ind(B,i,j));
     	}
     printf("\n");	
     }
 
-	
 
 	/* Free Memory*/
 	free(A);
