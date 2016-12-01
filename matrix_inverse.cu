@@ -34,9 +34,9 @@ int main(int argc, char **argv){
 
     /* Reservation of memory */
 
-    A = (float*)calloc(N, sizeof(float));
+    A = (float*)malloc(N*sizeof(float));
     	checkMalloc(A,"A");
-	B = (float*)calloc(N, sizeof(float));
+	B = (float*)malloc(N*sizeof(float));
 		checkMalloc(B,"B");
 
 	/* Initialitation Matix A*/
