@@ -5,15 +5,14 @@ This kernel find the  determinte of the matrix A in variable B
 
 */
 
-
-// Macro for mastrix index
-#define Ind(a,i,j) (a)[(j)+(i)*N]
-
 #include <stdio.h>              //manipulacion de ficheros, lectura-escritura ficheros, scandf-printf
 #include <stdlib.h>             //Conversion de tipos de datos, memoria dinamica, abs
 #include <string.h>             //Uso de memcpy principalmente
 #include <math.h>				//funciones matemáticas
 #include <time.h>	
+// Macro for mastrix index
+#define Ind(a,i,j) (a)[(j)+(i)*N]
+
 
 /* Funtion check malloc of variables */
 void checkMalloc(void * var,const char *name){
