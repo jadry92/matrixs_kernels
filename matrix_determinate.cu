@@ -5,6 +5,13 @@ This kernel find the  determinte of the matrix A in variable B
 
 */
 
+
+
+
+// Macro for mastrix index
+
+
+
 #include <stdio.h>              //manipulacion de ficheros, lectura-escritura ficheros, scandf-printf
 #include <stdlib.h>             //Conversion de tipos de datos, memoria dinamica, abs
 #include <string.h>             //Uso de memcpy principalmente
@@ -14,6 +21,9 @@ This kernel find the  determinte of the matrix A in variable B
 #define Ind(a,i,j) (a)[(j)+(i)*N]
 
 
+
+#define Ind(a,i,j) (a)[(j)+(i)*N]
+
 /* Funtion check malloc of variables */
 void checkMalloc(void * var,const char *name){
 	if( var == NULL){
@@ -21,15 +31,19 @@ void checkMalloc(void * var,const char *name){
     else {
      	printf(" Memory has already been allocated %s.\n",name);}
 }
-
+float det_2x2(float *A){
+    float det;
+    det = Ind(A,,)*Ind(A,,)-Ind(A,,)*Ind(A,,);
+}
 
 int main(int argc, char **argv){
 	/* Initiation of variables*/
 	int i,j; // i == rows and j == colms
 	int N =3;
 	float* A;
-    float B;
-
+    float det;
+    int k;
+    int count = N;
 
 
     /* Reservation of memory */
@@ -48,6 +62,13 @@ int main(int argc, char **argv){
     	printf("\n");	
     }	
 	
-	
 
+    for (k = 0; k < count; ++k){      
+        for(i = 0; i < N-1; i++){
+            det += Ind(A,k,i)*key;
+            for(j = 0; j < N-1; j++){
+                key = Ind(A,i,j);	
+            }
+        }    
+    }
 }
