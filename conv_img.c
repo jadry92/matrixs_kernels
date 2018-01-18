@@ -32,7 +32,7 @@ int main(int argc, const char *argv[]){
 	printf("%ld\n",sizeof(a1));
 */
 //--------------------------------------------------------------
-/*
+
 	int a1[3]={1,2,3};
 
 	int *a2;
@@ -43,7 +43,7 @@ int main(int argc, const char *argv[]){
 		printf(" %d | %d \n", a1[i],a2[i]);
 	}
 	printf("%d\n",*(a2+4));
-*/
+
 
 	int nx=100;
 	int nz=100;
