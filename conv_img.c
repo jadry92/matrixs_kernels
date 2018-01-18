@@ -5,7 +5,7 @@ int main(int argc, const char *argv[]){
 
 // leer argumentos de entrada en el ejcutable
 //-----------------------------------------------------------------
-/*
+
 	for (int i = 0; i < argc; ++i)
 		{
 			printf("%s\n", argv[i]);
@@ -15,12 +15,12 @@ int main(int argc, const char *argv[]){
 	entrada = atoi(argv[2]); 
 
 	printf("%d\n",entrada);
-*/	
+	
 //-----------------------------------------------------------------
 
 //tipos de variables y sizeof
 //------------------------------------------------------------------
-/*
+
 	int a1[100];
 	unsigned int a2;
 	long int a3;
@@ -30,9 +30,12 @@ int main(int argc, const char *argv[]){
 	char a7;
 
 	printf("%ld\n",sizeof(a1));
-*/
-//--------------------------------------------------------------
 
+//--------------------------------------------------------------
+	
+	printf("cosas nuevas\n");
+	printf("y mas cosas\n");
+	
 	int a1[3]={1,2,3};
 
 	int *a2;
