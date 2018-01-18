@@ -18,6 +18,20 @@ int main(int argc, const char *argv[]){
 	
 //-----------------------------------------------------------------
 
+// leer argumentos de entrada en el ejcutable
+//-----------------------------------------------------------------
+
+	for (int i = 0; i < argc; ++i)
+		{
+			printf("%s\n", argv[i]);
+		}	
+	int entrada;
+
+	entrada = atoi(argv[2]); 
+
+	printf("%d\n",entrada);
+	
+//-----------------------------------------------------------------
 //tipos de variables y sizeof
 //------------------------------------------------------------------
 
