@@ -21,7 +21,6 @@ int main(int argc, const char *argv[]){
 //tipos de variables y sizeof
 //------------------------------------------------------------------
 
-
 	int a1[100];
 	unsigned int a2;
 	long int a3;
@@ -33,7 +32,10 @@ int main(int argc, const char *argv[]){
 	printf("%ld\n",sizeof(a1));
 
 //--------------------------------------------------------------
-
+	
+	printf("cosas nuevas\n");
+	printf("y mas cosas\n");
+	
 	int a1[3]={1,2,3};
 
 	int *a2;
