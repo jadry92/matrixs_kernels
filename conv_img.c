@@ -45,7 +45,6 @@ int main(int argc, const char *argv[]){
 
 	printf("%ld\n",sizeof(a1));
 
-//--------------------------------------------------------------
 	
 	printf("cosas nuevas\n");
 	printf("y mas cosas\n");
